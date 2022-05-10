@@ -1,7 +1,7 @@
 ---
 title: Why we built a company before building a product
 date: 2019-04-30
-hero: "/images/screen-shot-2022-02-22-at-9-28-00-pm.png"
+hero: "/images/output.gif"
 excerpt: this is my excerpt
 timeToRead: 3
 authors:
