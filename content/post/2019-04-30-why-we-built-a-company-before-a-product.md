@@ -86,4 +86,3 @@ Now that we have the folder of images we can give them as a param to the CLI and
 ./HelloPhotogrammetry /path/to/your/images /path/to/your/outputFile/fileName.usdz -d raw -o sequential -f normal
 ```
 
-<iframe title="Aztec skull" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/edf071c1f85a4355943c5faec29e0ba6/embed"> </iframe> 
