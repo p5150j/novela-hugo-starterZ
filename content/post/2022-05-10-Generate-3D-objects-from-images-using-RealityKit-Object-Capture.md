@@ -6,7 +6,7 @@ excerpt: In this approach, I will be using Apple's native tooling to Generate 3D
   from images using RealityKit Object Capture API.
 timeToRead: 9
 authors:
-- Thiago Costa
+- Patrick Ortell
 
 ---
 ## Let's get started!
