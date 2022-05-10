@@ -29,7 +29,10 @@ Make sure you:
 
 Now open up a terminal and navigate to the location you saved and navigate into
 
-    Products/usr/local/bin
+    cd /Products/usr/local/bin
+    ls
+
+You see a HelloPhotogrammetry file.
 
 Hello, world! This is a demo post for `hugo-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
 
