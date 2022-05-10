@@ -35,26 +35,15 @@ ls - la
 ```
 
 You'll see a HelloPhotogrammetry executable you can run as a CLI tool. Lest run it with no arguments and see what are options are!!
-
+```js
     ./HelloPhotogrammetry
-    more needed
-
+```
 You can see it gives us some USAGE details:
 
+```js
     USAGE: hello-photogrammetry <input-folder> <output-filename> [--detail <detail>] [--sample-ordering <sample-ordering>] [--feature-sensitivity <feature-sensitivity>]
-    ok now what
-
-    let me see what this is
-
-    and what that is
-
-    1234
-
-    1234567
-
-    and this is by clicking before and adding an ending;
-
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
+```
+                                                                      
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
