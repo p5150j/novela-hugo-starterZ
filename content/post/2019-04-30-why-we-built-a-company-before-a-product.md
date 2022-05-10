@@ -34,7 +34,13 @@ cd /Products/usr/local/bin
 ls - la
 ```
 
-But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
+You'll see a HelloPhotogrammetry executable you can run as a CLI tool. Let run it with no arguments and see what are options are!!
+
+    ./HelloPhotogrammetry
+
+You can see it gives us some USAGE details:
+
+    .USAGE: hello-photogrammetry <input-folder> <output-filename> [--detail <detail>] [--sample-ordering <sample-ordering>] [--feature-sensitivity <feature-sensitivity>]
 
 # This is a primary heading
 
