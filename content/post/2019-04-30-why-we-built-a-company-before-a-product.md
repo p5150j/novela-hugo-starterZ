@@ -86,12 +86,16 @@ Now that we have the folder of images we can give them as a param to the CLI and
 ./HelloPhotogrammetry /path/to/your/images /path/to/your/outputFile/fileName.usdz -d raw -o sequential -f normal
 ```
 
-#### Voilà!! 
+#### Voilà!!
 
-Now we have a USDZ file that contains our 3D model and all the baked textures in a single file!  What the heck is a USDZ file tho? It's a file format created by [Pixar](https://graphics.pixar.com/usd/release/spec_usdz.html) (_yes, Pixar animation company_) to zip all the assets needed for a 3D object. Xcode natively supports USDZ file as the standard format for AR applications (_soon VR too_). 
+Now we have a USDZ file that contains our 3D model and all the baked textures in a single file!  What the heck is a USDZ file tho? It's a file format created by [Pixar](https://graphics.pixar.com/usd/release/spec_usdz.html) (_yes, Pixar animation company_) to zip all the assets needed for a 3D object. Xcode natively supports USDZ file as the standard format for AR applications (_soon VR too_).
 
-Small issue for Unity tho
-
-The only issue with this is that tools like Unity don't natively support USDZ files so you'll need to convert to something more common like FBX.  A great tool for Blender I found can be [found here](https://github.com/robmcrosby/BlenderUSDZ) that lets you import a USDZ and then export it to your format of choice 
+The only issue with this is that tools like Unity don't natively support USDZ files so you'll need to convert to something more common like FBX for example.  A great package for Blender I found can be [found here](https://github.com/robmcrosby/BlenderUSDZ) that lets you import a USDZ and then export it to your format of choice
 
 ![](/images/screen-shot-2022-05-10-at-12-08-46-pm.png)
+
+And then it's your standard workflow after that
+
+![](/images/screen-shot-2022-05-10-at-12-14-22-pm.png)
+
+I hope this post was helpful and has given you another tool in your toolbox to make richer applications for web3 and beyond.
