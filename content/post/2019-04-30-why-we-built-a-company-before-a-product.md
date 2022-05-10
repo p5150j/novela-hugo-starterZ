@@ -8,17 +8,12 @@ authors:
 - Thiago Costa
 
 ---
-## Background
-
-As the need for bringing 3D assets into applications keeps growing so does the demand for the asset creation pipeline.  Traditionally to make high-quality 3D assets someone would need to go down the rabbit hole of using tools like Blender/Zbrush for asset modeling and UV mapping and then bring them into something like Substance painter or Quixel mixer for doing the texturing to bring the asset to life visually. It's an art form, to say the least... and if I am being honest outside of the art... it's a highly technical pipeline with hundreds of variables that need to be perfectly tuned to get it right. It can take weeks for multiple people to create a quality asset that is optimized for AR/VR.
-
-![](/images/7bc4de7df7b73a308fa3dbbda948e19f8887d079_2_690x362.jpeg)
-
-The explosion of photogrammetry over the past few years and the use of LiDAR cameras, this has given us the ability to scan 3D objects from the real world into fully digital 3D asset textures and optimized for AR/VR in minutes. This post will cover some photogrammetry using a normal phone camera and we will cover LiDAR in a follow-up post.
 
 ## Let's get started!
 
-In this approach, I will be using Apple's native tooling to Generate 3D objects from images using RealityKit Object Capture API. Head over to [https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/](https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/ "https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/") and download the Xcode project.
+In this approach, I will be using Apple's native tooling to Generate 3D objects from images using RealityKit Object Capture API. We will also only be doing photogrammetry in this post and we will save the LiDAR scanning for another post.
+
+First, head over to [https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/](https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/ "https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/") and download the Xcode project.
 
 Make sure you:
 
@@ -34,16 +29,43 @@ cd /Products/usr/local/bin
 ls - la
 ```
 
-You'll see a HelloPhotogrammetry executable you can run as a CLI tool. Lest run it with no arguments and see what are options are!!
+You'll see a HelloPhotogrammetry executable you can run as a CLI tool. Let's run it with no arguments and see what are options are!!
+
 ```js
-    ./HelloPhotogrammetry
+ ./HelloPhotogrammetry
 ```
+
 You can see it gives us some USAGE details:
 
 ```js
-    USAGE: hello-photogrammetry <input-folder> <output-filename> [--detail <detail>] [--sample-ordering <sample-ordering>] [--feature-sensitivity <feature-sensitivity>]
+ USAGE: hello-photogrammetry <input-folder> <output-filename> [--detail <detail>] [--sample-ordering <sample-ordering>] [--feature-sensitivity <feature-sensitivity>]
 ```
-                                                                      
+
+#### Let's pull this apart a bit
+
+* input-folder: (is the folder you have all of the images you've taken with your camera)
+* output-filename: (is the output folder and what you want to name the file)
+* -d, --detail <detail> detail {preview, reduced, medium, full, raw} Detail of
+
+  output model in terms of mesh size and texture size .(default: nil)
+* -o, --sample-ordering <sample-ordering>
+
+  sampleOrdering {unordered, sequential} Setting to
+
+  sequential may speed up computation if images are captured
+
+  in a spatially sequential pattern.
+* -f, --feature-sensitivity <feature-sensitivity>
+
+  featureSensitivity {normal, high} Set to high if the
+
+  scanned object does not contain a lot of discernible
+
+  structures, edges or textures.
+
+Now that we have a solid understanding of what params the CLI gives us, lets put a pin in this and get some images created for creating the 3D asset. 
+
+Image capture:
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
