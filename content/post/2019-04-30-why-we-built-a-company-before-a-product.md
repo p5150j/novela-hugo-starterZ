@@ -8,6 +8,29 @@ authors:
 - Thiago Costa
 
 ---
+## Background
+
+As the need for bringing 3D assets into applications keeps growing so does the demand for the asset creation pipeline.  Traditionally to make high-quality 3D assets someone would need to go down the rabbit hole of using tools like Blender/Zbrush for asset modeling and UV mapping and then bring them into something like Substance painter or Quixel mixer for doing the texturing to bring the asset to life visually. It's an art form, to say the least... and if I am being honest outside of the art... it's a highly technical pipeline with hundreds of variables that need to be perfectly tuned to get it right. It can take weeks for multiple people to create a quality asset that is optimized for AR/VR. 
+
+![](/images/7bc4de7df7b73a308fa3dbbda948e19f8887d079_2_690x362.jpeg)
+
+The explosion of photogrammetry over the past few years and the use of LiDAR cameras, this has given us the ability to scan 3D objects from the real world into fully digital 3D asset textures and optimized for AR/VR in minutes. This post will cover some photogrammetry using a normal phone camera and we will cover LiDAR in a follow-up post. 
+
+## Let's get started!
+
+In this approach, I will be using Apple's native tooling to Generate 3D objects from images using RealityKit Object Capture API. Head over to [https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/](https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/ "https://developer.apple.com/documentation/realitykit/creating_a_photogrammetry_command-line_app/") and download the Xcode project. 
+
+Make sure you:
+
+* Product > Clean build folder
+* Targets > 12.0
+* Signing and capabilities > Select your apple dev account cert
+* Product >  Archive (this will build your executable ) > Distribute content > Archive > choose location to save 
+
+Now open up a terminal and navigate to the location you saved and navigate into
+
+    Products/usr/local/bin
+
 Hello, world! This is a demo post for `hugo-theme-novela`. Novela is built by the team at [Narative](https://narative.co), and built for everyone that loves the web.
 
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
