@@ -1,9 +1,10 @@
 ---
-title: Why we built a company before building a product
+title: Generate 3D objects from images using RealityKit Object Capture
 date: 2022-05-10T06:00:00+00:00
 hero: "/images/output.gif"
-excerpt: this is my excerpt
-timeToRead: 3
+excerpt: In this approach, I will be using Apple's native tooling to Generate 3D objects
+  from images using RealityKit Object Capture API.
+timeToRead: 9
 authors:
 - Thiago Costa
 
