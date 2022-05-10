@@ -14,6 +14,8 @@ In my experience, the challenges that growing companies struggle with rarely ste
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 
+![](/images/output.gif)
+
 In my experience, the challenges that growing companies struggle with rarely stem from a lack of good ideas. Good ideas are everywhere.
 
 But it takes more than good ideas to build and grow a business. It takes people to bring them into reality. Are those people collaborating and sharing their expertise, or are they in conflict and keeping it to themselves?
@@ -112,15 +114,15 @@ export default props => (
 
 These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself. These are the circumstances that suffocate creativity and destroy value in an organization. That’s why I knew that if I was going to start a company, our first product would have to be the company itself.
 
----
+***
 
 Hyphens
 
----
+***
 
 Asterisks
 
----
+***
 
 Underscores
 
@@ -138,7 +140,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 1. First ordered list item
 2. Another item
-   ⋅⋅\* Unordered sub-list.
+   ⋅⋅* Unordered sub-list.
 3. Actual numbers don't matter, just that it's a number
    ⋅⋅1. Ordered sub-list
 4. And another item.
@@ -149,8 +151,10 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 ⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
 ⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
 
-- Unordered list can use asterisks
+* Unordered list can use asterisks
+
 
 * Or minuses
 
-- Or pluses
+
+* Or pluses
