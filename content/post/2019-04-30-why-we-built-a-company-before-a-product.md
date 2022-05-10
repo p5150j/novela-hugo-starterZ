@@ -40,7 +40,15 @@ You'll see a HelloPhotogrammetry executable you can run as a CLI tool. Let run i
 
 You can see it gives us some USAGE details:
 
-    .USAGE: hello-photogrammetry <input-folder> <output-filename> [--detail <detail>] [--sample-ordering <sample-ordering>] [--feature-sensitivity <feature-sensitivity>]
+    import React from "react";
+    import { ThemeProvider } from "theme-ui";
+    import theme from "./theme";
+    
+    export default props => (
+      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
+    );
+
+    USAGE: hello-photogrammetry <input-folder> <output-filename> [--detail <detail>] [--sample-ordering <sample-ordering>] [--feature-sensitivity <feature-sensitivity>]
 
 # This is a primary heading
 
