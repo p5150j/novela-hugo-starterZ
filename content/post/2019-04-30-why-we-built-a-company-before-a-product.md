@@ -8,7 +8,6 @@ authors:
 - Thiago Costa
 
 ---
-
 ## Let's get started!
 
 In this approach, I will be using Apple's native tooling to Generate 3D objects from images using RealityKit Object Capture API. We will also only be doing photogrammetry in this post and we will save the LiDAR scanning for another post.
@@ -63,13 +62,29 @@ You can see it gives us some USAGE details:
 
   structures, edges or textures.
 
-Now that we have a solid understanding of what params the CLI gives us, let's put a pin in this and get some images created for creating the 3D asset. 
+Now that we have a solid understanding of what params the CLI gives us, let's put a pin in this and get some images created for creating the 3D asset.
 
 #### Image capture:
 
-The first thing we will need is to create an environment that minimizes real-world interference. To get the best results best practice says to try and remove as many background images that arent the subject-object, and minimize unintended shadows when possible. Apple does an amazing job at removing as many of these artifacts as possible but it's not flawless yet as this tech is still pretty new. I have opted in and just got a cheap [photo lightbox](https://www.amazon.com/gp/product/B08SKBKJRR/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) and a cheap [11" Lazy Susan](https://www.amazon.com/gp/product/B000WJQGMU/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&th=1) to make facilitate as clean of an environment as possible.  
+The first thing we will need is to create an environment that minimizes real-world interference. To get the best results best practice says to try and remove as many background images that arent the subject-object, and minimize unintended shadows when possible. Apple does an amazing job at removing as many of these artifacts as possible but it's not flawless yet as this tech is still pretty new. I have opted in and just got a cheap [photo lightbox](https://www.amazon.com/gp/product/B08SKBKJRR/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) and a cheap [11" Lazy Susan](https://www.amazon.com/gp/product/B000WJQGMU/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&th=1) to make facilitate as clean of an environment as possible.
 
 ![](/images/img_7160.jpg)
+
+Now you will want to connect your phone to a simple tripod and take pictures in 360 degrees of the object, then flip the object to another angle and take another burst of 360 images. I ended up also using my iWatch camera feature to help keep the phone still (no need to touch the phone). It's recommended to take 60-180 images.
+
+![](/images/img_7032.jpg)
+
+Now that all your images have been taken just AirDrop them to a folder on your computer.
+
+![](/images/screen-shot-2022-05-10-at-11-28-24-am.png)
+
+#### Let the CLI do the rest.
+
+Now that we have the folder of images we can give them as a param to the CLI and let it do all the work!
+
+```js
+./HelloPhotogrammetry /path/to/your/images /path/to/your/outputFile/fileName.usdz -d raw -o sequential -f normal
+```
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
