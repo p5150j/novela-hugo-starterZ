@@ -63,9 +63,13 @@ You can see it gives us some USAGE details:
 
   structures, edges or textures.
 
-Now that we have a solid understanding of what params the CLI gives us, lets put a pin in this and get some images created for creating the 3D asset. 
+Now that we have a solid understanding of what params the CLI gives us, let's put a pin in this and get some images created for creating the 3D asset. 
 
-Image capture:
+#### Image capture:
+
+The first thing we will need is to create an environment that minimizes real-world interference. To get the best results best practice says to try and remove as many background images that arent the subject-object, and minimize unintended shadows when possible. Apple does an amazing job at removing as many of these artifacts as possible but it's not flawless yet as this tech is still pretty new. I have opted in and just got a cheap [photo lightbox](https://www.amazon.com/gp/product/B08SKBKJRR/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1) and a cheap [11" Lazy Susan](https://www.amazon.com/gp/product/B000WJQGMU/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&th=1) to make facilitate as clean of an environment as possible.  
+
+![](/images/img_7160.jpg)
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
 
