@@ -1,6 +1,7 @@
 ---
 timeToRead: 2
-authors: []
+authors:
+- Patrick Ortell
 title: test
 excerpt: nope
 date: 2022-05-10T06:00:00+00:00
