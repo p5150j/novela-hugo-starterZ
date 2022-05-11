@@ -1,12 +1,12 @@
 ---
 title: Generate 3D objects from images using RealityKit Object Capture
-date: 2022-05-10T06:00:00+00:00
+date: 2022-05-10T06:00:00.000+00:00
 hero: "/images/output.gif"
 excerpt: In this approach, I will be using Apple's native tooling to Generate 3D objects
   from images using RealityKit Object Capture API.
 timeToRead: 9
 authors:
-- " Dennis Brotzky"
+- Patrick Ortell
 
 ---
 ## Let's get started!
