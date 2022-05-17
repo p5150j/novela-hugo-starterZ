@@ -45,3 +45,25 @@ Now let's hook up a UI toggle as we only want the UI to be in the VR world durin
 ### Interacting with the UI
 
 The reticle or laser pointer is like a 3d mouse attached to your hand so you can interact with UI elements.
+
+Oculus/screens and open UI
+
+copy the 
+
+* OVRGazePointer
+* EventSystem
+
+and bring them into your scene (also take note of a few scripts they provide that will help us in the next steps)
+
+Scripts needed are: 
+
+* OVRPhysicsRaycaster is on the camera rig to cast the ray
+* OVRRaycaster is for canvas UI interactions 
+
+Now back in our scene, you'll see in the EventSystem and the OVRGazePointer that we have an OVRInput module script and that its Ray Transform is missing. We will want to add our right-hand controller anchor to each of these. 
+
+ Now that we have those 2 wired up we need to add our other scripts to our camera rig so we can close the loop and visualize the ray casting.
+
+On our OVRCameraRig add a  OVRPhysicsRaycaster with default params. Then navigate to our UI safer area canvas component and add the OVRRaycaster and now we are cooking with gas!!!
+
+![](/images/ray.gif)
