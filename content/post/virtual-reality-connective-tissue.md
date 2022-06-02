@@ -210,10 +210,12 @@ Now let's make our server that will consume the VR events and toggle the lights
 
 ![](https://user-images.githubusercontent.com/444888/150306562-a3c2f98e-9790-49e3-8add-ea4a5c51793b.png)
 
-Test the endpoints via POSTMAN
+Using a tool like[ Postman to test the API](https://www.postman.com/) you can debug and make sure your events are being fired correctly and simulate the payloads coming from the VR device.
 
 ![](https://user-images.githubusercontent.com/444888/150306592-528281ac-6e14-4c7f-867c-88d9ba7be310.png)
 
-Start the VR project via Air Link in UNtil and make sure the POST endpoints and printed to the PI IP address and boom!
+After it's been tested and you are ready, start the VR project on the HMD, and boom!
 
 ![](/images/150306532-bf11af13-1b0a-4d2d-97e4-647b6105a7b3.gif)
+
+### 
