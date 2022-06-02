@@ -1,6 +1,7 @@
 ---
 timeToRead: 5
-authors: []
+authors:
+- Patrick Ortell
 title: Virtual Reality Connective Tissue
 excerpt: 'Virtual Reality Connective Tissue is a project controlling micro controllers
   in the real world from within virtual reality '
