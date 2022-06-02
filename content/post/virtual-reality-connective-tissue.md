@@ -40,7 +40,7 @@ For this we will need 4 things:
 
 Now that we have our buttons we want to attach REST post events to them
 
-    
+  ```js  
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
@@ -107,6 +107,7 @@ Now that we have our buttons we want to attach REST post events to them
         .Catch(err => this.LogMessage("Error", err.Message));
     
     }
+```
 
 ## Raspberry pi
 
@@ -118,6 +119,7 @@ The first thing we need to do is to connect a relay to a light bulb
 
 Cool now that that's all setup lets get a node server running with a REST API to toggle the relay values
 
+```js
     const fs = require('fs');
     const http = require('http');
     const gpio = require('onoff').Gpio;
@@ -212,6 +214,7 @@ Cool now that that's all setup lets get a node server running with a REST API to
       allRelaysOff();
       process.exit();
     });
+```
 
 ![](https://user-images.githubusercontent.com/444888/150306562-a3c2f98e-9790-49e3-8add-ea4a5c51793b.png)
 
