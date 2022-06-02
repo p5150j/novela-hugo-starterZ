@@ -9,107 +9,92 @@ date: 2022-06-02T06:00:00+00:00
 hero: "/images/150306532-bf11af13-1b0a-4d2d-97e4-647b6105a7b3.gif"
 
 ---
-## Abstract:
+### Abstract:
 
-As the world, our devices, and our attention spans get smaller our needs to fill that void with consumerism, laziness, and gluttony get stronger. We have all dreamed of a dystopian future like wall-e, minority report, ready player one and alike wherein human-computer interfaces have evolved into more of an extension of our physical selves. On the more dramatic level, we have even seen a subculture starting to do bio-hacking and implementing RFID chips into their bodies much like implanted keyfobs. Without getting off track too much... we all have a flavor of this rabbit hole we could go down... but this brings me to my first question.
+As the world, our devices, and our attention spans get smaller our needs to fill that void with consumerism, laziness, and gluttony get stronger. We have all dreamed of a dystopian future like wall-e, minority report, ready player one, and alike wherein human-computer interfaces have evolved into more of an extension of our physical selves. On the more dramatic level, we have even seen a subculture starting to do bio-hacking and implementing RFID chips into their bodies much like implanted keyfobs. 
 
-## Question:
+![](/images/yoal-desurmont-nschnjdtose-unsplash.jpg)
 
-Is XR the next step closer to these worlds of dreams and nightmares? We have all seen the if not owned an Oculus, HoloLens, MagicLeap, and soon Apple glass & VR devices. At the very least Augmented reality has touched your life in some small way by seeing how a product would look in your house via an overlay on your smartphone camera.
+Without getting off track too much... we all have a flavor of this rabbit hole we could go down... but this brings me to my first question.
+
+### Question:
+
+Is XR the next step closer to these worlds of dreams and nightmares? We have all seen, if not owned an Oculus, HoloLens, MagicLeap, and soon Apple glass & VR devices. At the very least Augmented reality has touched your life in some small way by seeing how a product would look in your house via an overlay on your smartphone camera.
 
 But all of these devices are only scratching the surface (industrial or commercial) they are all still presenting us with a new way to consume media types... we can now interact with them with hand tracking and they have opened new doors to how we consume and interact with content... but I have yet to see anyone doing anything wherein we can connect the 2 worlds and bring us closer to that human-computer interface.
 
-What if we could interact with a virtual world in a way that changed the tangible world around us? With a swipe of my hand, I could turn on my stove and adjust the timer and burner heat with a slide and tab of an index finger? Could I do highly technical work in a nuclear power plant that isn't safe for humans and cant be automated from 10k miles away?
+![](/images/possessed-photography-ykw0jjp7rlu-unsplash.jpg)
 
-How do we start? Welp that's what these Virtual-Reality-Connective-Tissue experiments aim to answer, or at least give us a direction for some real-world use cases that aren't just consuming media types.
+* What if we could interact with a virtual world in a way that changed the tangible world around us? 
+* With a swipe of my hand, I could turn on my stove and adjust the timer and burner heat with a slide and tab of an index finger? 
+* Could I do highly technical work in a nuclear power plant that isn't safe for humans and cant be automated from 10k miles away?
+* 
 
-# Human virtual touch GPIO translation
+> ## _How do we start?_ 
 
-So can we make a simple light turn on and off in the real world from an event we take in the virtual world?
+#### Human virtual touch GPIO translation
 
-> Like a Virtual-Reality-Connective-Tissue equivalent of a `hello world` app?
+Make a simple light turn on and off in the real world from an event we take in the virtual world.
+
+What would we need to do this?
 
 For this we will need 4 things:
 
-* some buttons in a virtual world
-* a way for the user to interact with the buttons
-* a way for the buttons to communicate with an external real-world device (rest API)
-* a 2nd device in the real world to respond to visual events
+* Some buttons in a virtual world
+* A way for the user to interact with the buttons
+* A way for the buttons to fire events and communicate with an external real-world device (rest API)
+* A 2nd device in the real world to consume and respond to our virtual events
 
-## Buttons and firing events
+#### Buttons and firing events
 
 Now that we have our buttons we want to attach REST post events to them
 
-  ```js  
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using UnityEngine.UI;
-    using UnityEditor;
-    using Models;
-    using Proyecto26;
-    using UnityEngine.Networking;
-    
-    private RequestHelper currentRequest;
-    
-    private void LogMessage(string title, string message) {
-      #if UNITY_EDITOR
-      Debug.Log(message);
-      #else
-      Debug.Log(message);
-      #endif
-    }
-    
-    public void TurnLightOn() {
-      /// post code here
-    
-      currentRequest = new RequestHelper {
-        Uri = "http://10.0.0.188:8888/relays/3",
-    
-          Body = new Post {
-            state = true,
-    
-          },
-          EnableDebug = true
-      };
-      RestClient.Post < Post > (currentRequest)
-        .Then(res => {
-    
-          // And later we can clear the default query string params for all requests
+```js  
+...
+  using Models;
+  using Proyecto26;
+  using UnityEngine.Networking;
+  
+  private RequestHelper currentRequest;
+  
+  private void LogMessage(string title, string message) {
+    Debug.Log(message);
+  }
+  
+  public void TurnLightOn() {
+    currentRequest = new RequestHelper {
+      Uri = "http://10.0.0.188:8888/relays/3",
+        Body = new Post {
+          state = true,
+        },
+        EnableDebug = true
+    };
+    RestClient.Post < Post > (currentRequest)
+      .Then(res => {
           RestClient.ClearDefaultParams();
-    
-          this.LogMessage("Success", JsonUtility.ToJson(res, true));
-        })
-        .Catch(err => this.LogMessage("Error", err.Message));
-    
-    }
-    
-    public void TurnLightOff() {
-      /// post code here
-    
-      currentRequest = new RequestHelper {
-        Uri = "http://10.0.0.188:8888/relays/3",
-    
-          Body = new Post {
-            state = false,
-    
-          },
-          EnableDebug = true
-      };
-      RestClient.Post < Post > (currentRequest)
-        .Then(res => {
-    
-          // And later we can clear the default query string params for all requests
+        this.LogMessage("Success", JsonUtility.ToJson(res, true));
+      })
+      .Catch(err => this.LogMessage("Error", err.Message));
+  }
+  
+  public void TurnLightOff() {
+    currentRequest = new RequestHelper {
+      Uri = "http://10.0.0.188:8888/relays/3",
+        Body = new Post {
+          state = false,
+        },
+        EnableDebug = true
+    };
+    RestClient.Post < Post > (currentRequest)
+      .Then(res => {
           RestClient.ClearDefaultParams();
-    
-          this.LogMessage("Success", JsonUtility.ToJson(res, true));
-        })
-        .Catch(err => this.LogMessage("Error", err.Message));
-    
-    }
+        this.LogMessage("Success", JsonUtility.ToJson(res, true));
+      })
+      .Catch(err => this.LogMessage("Error", err.Message));
+  }
 ```
 
-## Raspberry pi
+#### Raspberry pi
 
 The first thing we need to do is to connect a relay to a light bulb
 
