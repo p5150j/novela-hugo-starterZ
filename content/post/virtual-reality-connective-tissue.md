@@ -5,7 +5,7 @@ authors:
 title: Virtual Reality Connective Tissue
 excerpt: 'Virtual Reality Connective Tissue is a project controlling micro controllers
   in the real world from within virtual reality '
-date: 2022-06-02T06:00:00+00:00
+date: 2022-04-06T06:00:00+00:00
 hero: "/images/150306532-bf11af13-1b0a-4d2d-97e4-647b6105a7b3.gif"
 
 ---
