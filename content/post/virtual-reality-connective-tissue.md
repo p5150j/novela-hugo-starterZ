@@ -28,17 +28,14 @@ But all of these devices are only scratching the surface (industrial or commerci
 * What if we could interact with a virtual world in a way that changed the tangible world around us? 
 * With a swipe of my hand, I could turn on my stove and adjust the timer and burner heat with a slide and tab of an index finger? 
 * Could I do highly technical work in a nuclear power plant that isn't safe for humans and cant be automated from 10k miles away?
-* 
 
 > ## _How do we start?_ 
 
 #### Human virtual touch GPIO translation
 
-Make a simple light turn on and off in the real world from an event we take in the virtual world.
+Make a simple light turn on and off in the real world from an event we take in the virtual world. What would we need to do this?
 
-What would we need to do this?
-
-For this we will need 4 things:
+###### For this we will need 4 things:
 
 * Some buttons in a virtual world
 * A way for the user to interact with the buttons
