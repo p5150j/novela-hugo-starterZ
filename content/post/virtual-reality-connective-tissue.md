@@ -11,7 +11,7 @@ hero: "/images/150306532-bf11af13-1b0a-4d2d-97e4-647b6105a7b3.gif"
 ---
 ### Abstract:
 
-As the world, our devices, and our attention spans get smaller our needs to fill that void with consumerism, laziness, and gluttony get stronger. We have all dreamed of a dystopian future like wall-e, minority report, ready player one, and alike wherein human-computer interfaces have evolved into more of an extension of our physical selves. On the more dramatic level, we have even seen a subculture starting to do bio-hacking and implementing RFID chips into their bodies much like implanted keyfobs. 
+As the world, our devices, and our attention spans get smaller our needs to fill that void with consumerism, laziness, and gluttony get stronger. We have all dreamed of a dystopian future like wall-e, minority report, ready player one, and alike wherein human-computer interfaces have evolved into more of an extension of our physical selves. On the more dramatic level, we have even seen a subculture starting to do bio-hacking and implementing RFID chips into their bodies much like implanted keyfobs.
 
 ![](/images/yoal-desurmont-nschnjdtose-unsplash.jpg)
 
@@ -25,11 +25,11 @@ But all of these devices are only scratching the surface (industrial or commerci
 
 ![](/images/possessed-photography-ykw0jjp7rlu-unsplash.jpg)
 
-* What if we could interact with a virtual world in a way that changed the tangible world around us? 
-* With a swipe of my hand, I could turn on my stove and adjust the timer and burner heat with a slide and tab of an index finger? 
+* What if we could interact with a virtual world in a way that changed the tangible world around us?
+* With a swipe of my hand, I could turn on my stove and adjust the timer and burner heat with a slide and tab of an index finger?
 * Could I do highly technical work in a nuclear power plant that isn't safe for humans and cant be automated from 10k miles away?
 
-> ## _How do we start?_ 
+> ## _How do we start?_
 
 #### Human virtual touch GPIO translation
 
@@ -44,7 +44,7 @@ Make a simple light turn on and off in the real world from an event we take in t
 
 #### Buttons and firing events
 
-Now that we have our buttons we want to attach REST post events to them
+Now that we have our buttons in Unity let's connect them to publishing events that another device can subscribe to. For this, we can use a REST API and POST data using 2 functions TurnLightOn() and TurnLightOff().
 
 ```js  
 ...
@@ -93,13 +93,23 @@ Now that we have our buttons we want to attach REST post events to them
 
 #### Raspberry pi
 
-The first thing we need to do is to connect a relay to a light bulb
+The first thing we need to do on an external device is to connect an electrical relay to a light bulb and then have the Raspberry pi in between them. Here is a crude drawing of the connections.
 
 ![](https://user-images.githubusercontent.com/444888/150848618-47cad787-bd35-4fe3-ac95-0a8eead031db.jpeg)
 
 ![](https://user-images.githubusercontent.com/444888/150307233-bdf7d046-8547-4195-9ed6-73dbd185a517.jpg)
 
-Cool now that that's all setup lets get a node server running with a REST API to toggle the relay values
+Cool now that that's all set up let's write some code and get a node server running with a REST API to toggle the relay values. On the Raspberry pi make sure you have node installed and you create a server.js file.
+
+```js
+sudo sucurl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+sudo apt install nodejs
+
+cd into a dir/you/want
+touch server.js
+```
+
+Now let's make our server that will consume the VR events and toggle the lights
 
 ```js
     const fs = require('fs');
